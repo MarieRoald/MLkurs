@@ -5,7 +5,7 @@ import seaborn as sns
 import pandas as pd
 import itertools
 
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, mean_square_error
 
 def plot_boundary(X, clf, plot_step=0.02, padding=0.1):
     '''Plots the decision boundary in two dimensions for a classifier
@@ -100,6 +100,8 @@ class ModelTester:
         columns than what the model is fitted to, this list will specify which
         columns to use.
 
+        features: The columns to use from `self.x_test` if it is a pandas DataFrame.
+
         title: Optional. Title for the confusion matrix plot
 
         plot_confusion: Optional. If true, the confusion matrix will be
@@ -117,4 +119,12 @@ class ModelTester:
         if print_success:
             print('Accuracy: ', (sum(np.equal(predictions, self.y_test.values))/len(self.y_test))[0]*100, '%')
 
+    def test_regressor(self, reg, features=None):
+        '''
+        Tests the regressor `reg`, by printing MSE for the test data.
+        
+        features: The columns to use from `self.x_test` if it is a pandas DataFrame.
+        '''
+        predictions = reg.predict(self._format_data(self.x_test, features)).reshape((-1, 1))
+        print('MSE: ', mean_square_error(self.y_test, predictions))
 
