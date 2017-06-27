@@ -5,7 +5,7 @@ import seaborn as sns
 import pandas as pd
 import itertools
 
-from sklearn.metrics import confusion_matrix, mean_square_error
+from sklearn.metrics import confusion_matrix, mean_squared_error
 
 def plot_boundary(X, clf, plot_step=0.02, padding=0.1):
     '''Plots the decision boundary in two dimensions for a classifier
@@ -125,5 +125,5 @@ class ModelTester:
         features: The columns to use from `self.x_test` if it is a pandas DataFrame.
         '''
         predictions = reg.predict(self._format_data(self.x_test, features)).reshape((-1, 1))
-        print('MSE: ', mean_square_error(self.y_test, predictions))
+        print('MSE: ', mean_squared_error(self.y_test, predictions))
 
