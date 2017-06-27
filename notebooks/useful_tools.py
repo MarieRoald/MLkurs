@@ -75,14 +75,13 @@ class ModelTester:
 
     def _format_data(self, df, features):
         '''
-        df: A dataframe, or a numpy array/matrix(TODO?) features: Iterable,
+        df: A dataframe, or a numpy array features: Iterable,
         containing the names of features to extract if df is a dataframe
         
-        returns: If df is of type pandas.DataFrame, a new DataFrame (TODO: or
-        view, rather?) containing the columns whose names are in features. If
-        df is of another type , or noe features were specified, it must be
-        assumed that the user has passed a valid data type of the correct
-        dimensions to the method'''
+        returns: If df is of type pandas.DataFrame, a new DataFrame or View
+        containing the columns whose names are in features. If df is of another
+        type , or noe features were specified, it must be assumed that the user
+        has passed a valid data type of the correct dimensions to the method'''
 
         if type(df) == pd.core.frame.DataFrame and features != None:
             return df[features]
