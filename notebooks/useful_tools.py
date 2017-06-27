@@ -5,7 +5,7 @@ import seaborn as sns
 import pandas as pd
 import itertools
 
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, mean_squared_error
 
 def plot_boundary(X, clf, plot_step=0.02, padding=0.1):
     '''Plots the decision boundary in two dimensions for a classifier
@@ -75,14 +75,13 @@ class ModelTester:
 
     def _format_data(self, df, features):
         '''
-        df: A dataframe, or a numpy array/matrix(TODO?) features: Iterable,
+        df: A dataframe, or a numpy array features: Iterable,
         containing the names of features to extract if df is a dataframe
         
-        returns: If df is of type pandas.DataFrame, a new DataFrame (TODO: or
-        view, rather?) containing the columns whose names are in features. If
-        df is of another type , or noe features were specified, it must be
-        assumed that the user has passed a valid data type of the correct
-        dimensions to the method'''
+        returns: If df is of type pandas.DataFrame, a new DataFrame or View
+        containing the columns whose names are in features. If df is of another
+        type , or noe features were specified, it must be assumed that the user
+        has passed a valid data type of the correct dimensions to the method'''
 
         if type(df) == pd.core.frame.DataFrame and features != None:
             return df[features]
@@ -91,6 +90,23 @@ class ModelTester:
 
     def test_classifier(self, clf, class_names, features=None, title='Confusion matrix', 
             plot_confusion=True, print_success=True):
+        '''
+        Plots the confusion matrix and print the success rate
+
+        clf: The classifier to use class_names: A list of names for the classes
+        that clf can output. This is for labeling the confusion matrix plot
+        features: If self.x_test is a pandas DataFrame that contains more
+        columns than what the model is fitted to, this list will specify which
+        columns to use.
+
+        features: The columns to use from `self.x_test` if it is a pandas DataFrame.
+
+        title: Optional. Title for the confusion matrix plot
+
+        plot_confusion: Optional. If true, the confusion matrix will be
+        plotted. Default True print_success: Optional. If true, the accurracy
+        will be calculated and printed. Default True
+        '''
 
         predictions = clf.predict(self._format_data(self.x_test, features)).reshape((-1, 1))
         cnf_mat = confusion_matrix(self.y_test, predictions)
@@ -102,4 +118,12 @@ class ModelTester:
         if print_success:
             print('Accuracy: ', (sum(np.equal(predictions, self.y_test.values))/len(self.y_test))[0]*100, '%')
 
+    def test_regressor(self, reg, features=None):
+        '''
+        Tests the regressor `reg`, by printing MSE for the test data.
+        
+        features: The columns to use from `self.x_test` if it is a pandas DataFrame.
+        '''
+        predictions = reg.predict(self._format_data(self.x_test, features)).reshape((-1, 1))
+        print('MSE: ', mean_squared_error(self.y_test, predictions))
 
