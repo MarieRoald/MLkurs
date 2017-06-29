@@ -106,24 +106,33 @@ class ModelTester:
         plot_confusion: Optional. If true, the confusion matrix will be
         plotted. Default True print_success: Optional. If true, the accurracy
         will be calculated and printed. Default True
+
+        returns confusion matrix, Success rate
         '''
 
         predictions = clf.predict(self._format_data(self.x_test, features)).reshape((-1, 1))
         cnf_mat = confusion_matrix(self.y_test, predictions)
+        success_rate = (sum(np.equal(predictions, self.y_test.values))/len(self.y_test))[0]
 
         if plot_confusion:
             plot_confusion_matrix(cnf_mat, class_names, title=title)
             plt.show()
 
         if print_success:
-            print('Accuracy: ', (sum(np.equal(predictions, self.y_test.values))/len(self.y_test))[0]*100, '%')
+            print('Accuracy: ', success_rate*100, '%')
 
-    def test_regressor(self, reg, features=None):
+        return cnf_mat, success_rate
+
+    def test_regressor(self, reg, features=None, print_mse=True):
         '''
         Tests the regressor `reg`, by printing MSE for the test data.
         
         features: The columns to use from `self.x_test` if it is a pandas DataFrame.
+
+        returns MSE
         '''
         predictions = reg.predict(self._format_data(self.x_test, features)).reshape((-1, 1))
-        print('MSE: ', mean_squared_error(self.y_test, predictions))
+        mse = mean_squared_error(self.y_test, predictions)
+        print('MSE: ', mse)
+        return mse
 
