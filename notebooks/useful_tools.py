@@ -83,7 +83,7 @@ class ModelTester:
         type , or noe features were specified, it must be assumed that the user
         has passed a valid data type of the correct dimensions to the method'''
 
-        if type(df) == pd.core.frame.DataFrame and features != None:
+        if type(df) == pd.core.frame.DataFrame and features is not None:
             return df[features]
 
         return df
