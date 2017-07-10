@@ -14,7 +14,10 @@ def plot_boundary(X, clf, plot_step=0.02, padding=0.1):
     clf: Classifier
     plot_step: Distance between each point in the mesh
     padding: Padding in each direction'''
-    
+
+    if isinstance(X, pd.core.frame.DataFrame):
+        X = X.values
+
     x_min, x_max = X[:, 0].min() - padding, X[:, 0].max() + padding
     y_min, y_max = X[:, 1].min() - padding, X[:, 1].max() + padding
     xx, yy = np.meshgrid(np.arange(x_min, x_max, plot_step),
