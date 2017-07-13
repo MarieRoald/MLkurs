@@ -31,13 +31,17 @@ def plot_boundary(X, clf, plot_step=0.02, padding=0.1):
 def plot_confusion_matrix(cm, classes,
                           normalize=False,
                           title='Confusion matrix',
-                          cmap=plt.cm.Blues):
+                          cmap=plt.cm.Blues,
+                          new_figure=True):
     '''
     http://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html
     Prints and plots the confusion matrix.
     classes: Name of classes
     normalize: Setting this to True will normalize the values
+    new_figure: Will plot confusion matrix in a new figure.
     '''
+    if new_figure:
+        plt.figure()
     with sns.axes_style('white'):
         plt.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
