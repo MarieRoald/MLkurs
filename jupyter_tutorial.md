@@ -17,7 +17,7 @@ Programmet vi skal bruke til å programmere i, heter Jupyter. Det er et program
 som kjører i nettleseren din, og er utformet for å kombinere kode og tekst, og
 også for å gjøre det lett å visualisere ting.
 
-Jupyter følger må Anaconda, men må startes manuelt. Dette kan gjøres på to
+Jupyter følger med Anaconda, men må startes manuelt. Dette kan gjøres på to
 forskjellige måter:
 
 ### Alternativ 1
