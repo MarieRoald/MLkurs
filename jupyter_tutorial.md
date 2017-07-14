@@ -48,3 +48,9 @@ Mac/Linux.  Hvis du vil se hvilken mappe du er i, skriver du `cd` på Windows og
 Når du har kommet deg inn i riktig mappe, skriver du `jupyter notebook`. Det
 samme vil skje som for alternativ 1, bare at du nå starter i den mappen du
 startet Jupyter Notebook fra.
+
+## Avslutte Jupyter Notebook
+
+Du avslutter Jupyter notebook ved å trykke Ctrl-C i terminalvinduet der det
+kjører. Du vil da få spørsmål om du vil avslutte. Trykk `y` for 'yes', og trykk
+`Enter`.
