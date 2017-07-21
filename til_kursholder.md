@@ -53,7 +53,7 @@ Sistnevnte var mest vellykket, og ble også foretrukket av elevene selv.
         * Kanskje litt vanskelig å forstå hva som foregår her. Kan være lurt å sjekke at alle henger med underveis
 3. [Kahoot](https://create.kahoot.it/#quiz/7eb276e5-b446-4d8b-9862-974070a9cbc2)
 
-### ***Uke 4:** Clustering og oppsummering
+### **Uke 4:** Clustering og oppsummering
 1. Notebook: Intro til clustering
 2. Oppgaver:
     * KMeansImage
