@@ -27,6 +27,7 @@ Sistnevnte var mest vellykket, og ble også foretrukket av elevene selv.
 ### **Uke 0:** Intro til kurset og programmering
 0. Installasjon av Anaconda og distribusjon av materialet.
 1. Slidene i intro.html.
+    * Disse er kun ment til et raskt overblikk, slik at man ikke bare går rett på programmering og lineær regresjon.
 2. Notebook om Python-programmering (introductions/Intro_python.ipynb).ipynb
     * Demonstrere Jupyter notebook.
     * Det er ikke sikkert at det er nødvendig/lurt å gå igjennom alt. Særlig ikke delen om scikit-learn, siden vi ennå ikke har snakket noe særlig om maskinlæring.
