@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Oppsummering</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/beige.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <section>
+                    <h1>Oppsummering av maskinlæringskurs</h1>
+                    <h2>Simula 2017</h2>
+                </section>
+
+                <section>
+                    <h2>Grunnleggende om maskinlæring</h2>
+                    <ul>
+                        <li>Hva er maskinlæring?</li>
+                        <li>Hva ønsker vi å oppnå?</li>
+                        <li>Hvordan oppnår vi det</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Viktige begreper i maskinlæring</h2>
+                    <ul>
+                        <li>Overtilpassing</li>
+                        <li>Trening- og testsett</li>
+                        <li>Trening- og testfeil</li>
+                        <li>Styrt læring</li>
+                        <li>Ikke-styrt læring</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>Typer algoritmer</h2>
+                    <ul class="fragment" data-fragment-index="1">
+                        <li>Regresjon</li>
+                        <li>Klassifikasjon</li>
+                        <li>Clustering</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Regresjon</h2>
+                    <ul>
+                        <li>Hva er regresjon?</li>
+                        <li><b>Metoder:</b>
+                            <ul class="fragment" data-fragment-index="1">
+                                <li>Lineær regresjon</li>
+                                <li>Beslutningstrær</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Klassifikasjon</h2>
+                    <ul>
+                        <li>Hva er klassifikasjon?</li>
+                        <li><b>Metoder:</b>
+                            <ul class="fragment" data-fragment-index="1">
+                                <li>K Nærmeste Naboer</li>
+                                <li>Logistisk regresjon</li>
+                                <li>Beslutningstrær</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Clustering</h2>
+                    <ul>
+                        <li>Hva er clustering?</li>
+                        <li><b>Metode:</b>
+                        <ul class="fragment" data-fragment-index="1">
+                            <li>K-means</li>
+                        </ul></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Maskinlæring med scikit-learn</h2>
+                    <ol>
+                        <li class="fragment" data-fragment-index="1">Lage modell
+                            <ul>
+                                <li class="fragment" data-fragment-index="2"><code>model = KNeighborsClassifier(n_neighbors=7)</code></li>
+                            </ul>
+                        </li>
+                        <li class="fragment" data-fragment-index="3">Trene modell</li>
+                            <ul>
+                                <li class="fragment" data-fragment-index="4"><code>model.fit(train_data, test_data)</code></li>
+                            </ul>
+                        <li class="fragment" data-fragment-index="5">Predikere</li>
+                            <ul>
+                                <li class="fragment" data-fragment-index="6"><code>predictions = model.predict(test_data)</code></li>
+                            </ul>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Spørsmål?</h2>
+                </section>
+            </div>
+        </div>
+        <script src="js/reveal.js"></script>
+        <script>
+            Reveal.initialize();
+        </script>
+    </body>
+</html>

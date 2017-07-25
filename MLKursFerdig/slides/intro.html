@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Introduksjon til maskinlæring</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/beige.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <section>
+                    <h1>Introduksjon til maskinlæring</h1>
+                    <h2>Simula 2017</h2>
+                </section>
+
+                <section>
+                    <h2>Oversikt</h2>
+                    <ul>
+                        <li>Mål for kurset</li>
+                        <li>Hva er maskinlæring</li>
+                        <li>Hvorfor ha et kurs om maskinlæring?</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Mål for kurset</h2>
+                    <p>Etter å ha gjennomført dette kurset, skal du</p>
+                    <ul>
+                        <li>Vite hva maskinlæring er, og hva det kan brukes til</li>
+                        <li>Forstå enkle prinsipper og begreper relatert til maskinlæring</li>
+                        <li>Forstå grunnleggende metoder for maskinlæring</li>
+                        <li>Kunne utføre enkel maskinlæring med Python og pakker relatert til maskinlæring</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Hva er maskinlæring?</h2>
+                    La oss først se på hvordan datamaskiner fungerer.
+                </section>
+
+                <section>
+                    <h2>Datamaskiner må instrueres</h2>
+                    <ul>
+                        <li>Selv om datamaskiner noen ganger kan virke smarte, er de egentlig ikke det</li>
+                        <li>Den må bli fortalt nøyaktig hva den skal gjøre.
+                            <ul>
+                                <li>Ofte mye jobb, siden problemet må løses av mennesker først</li>
+                            </ul>
+                        </li>
+                        <li>Kan vi få maskiner til å lære, slik som mennesker kan</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Et typisk eksempel: Huspriser</h2>
+                    <ul>
+                        <li>Vi har samlet informasjon om prisen forskjellige hus er solgt for, og størrelsen</li>
+                        <li>Vi vil bruke dette til å <em>predikere</em> (gjette) prisen på nye hus</li>
+                        <li>Her er størrelsen på huset en <em>forklaringsvariabel/feature</em></li>
+                        <li>Prisen er <em>responsen</em> (det vi vil forutse)</li>
+                        <li>Når vi "gjetter", sier vi at vi <em>predikerer</em></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Vi forteller maskinen hvordan den skal lære</h2>
+                    <ul>
+                        <li>Vi gir datamaskinen data, og forteller den hvordan den skal bruke dataene til å ta beslutninger om nye punkter.</li>
+                        <li>Vi håper at metoden vi ga maskinen finner en sammenheng i dataene, slik at maskinen kan gi oss en god prediksjon for et nytt punkt</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Utfordringer</h2>
+                    <ul>
+                        <li>Sjeldent åpenbart hvilken metode man bør bruke</li>
+                        <li>Ofte utfordringer med lite data
+                            <ul>
+                                <li>Mer data gir et mer komplett bilde av virkeligheten, og er derfor ofte å foretrekke</li>
+                                <li>For kompliserte problemer (eks. bildeanalyse) trenger man enorme mengder data</li>
+                            </ul>
+                        </li>
+                        <li>Raske datamaskiner er viktig for store problemer</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Noen av tingene vi skal se på i kurset</h2>
+                    <ul>
+                        <li>Forutse priser på hus</li>
+                        <li>Lage et spam-filter</li>
+                        <li>Gjenkjenne håndskrevne tall på bilder</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Hvorfor ha et kurs om maskinlæring?</h2>
+                    <ul>
+                        <li>Maskinlæring har blitt veldig populært de siste årene, siden noen problemer er lettere å løse.
+                            <ul>
+                                <li>Datamaskiner har blitt raskere</li>
+                                <li>Det finnes store datasett (Google, Facebook etc.)</li>
+                            </ul>
+                        </li>
+                        <li>Fremstilles ofte som "magi"/en løsning på alle våre problemer
+                            <ul>
+                                <li>Dessverre er det ikke alltid problemer lar seg løse med maskinlæring</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Først skal vi se på noe dere er kanskje har sett før: Lineær regresjon</h2>
+                </section>
+
+            </div>
+        </div>
+        <script src="js/reveal.js"></script>
+        <script>
+Reveal.initialize();
+        </script>
+    </body>
+</html>
